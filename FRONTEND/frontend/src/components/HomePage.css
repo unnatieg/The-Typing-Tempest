@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+body {
+  margin: 0; 
+  font-family: 'Poppins', sans-serif;
+}
+
+.logo {
+  font-family: 'Spicy Rice', serif;
+  font-size: 24px;
+  color: #6F96D1;
+  line-height: 0.6;
+  margin-left: 20px;
+}
+
+.top {
+  background-color: #6F96D1;
+  height: 53px;
+  width: 100%;
+}
+
+#desktop-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  height: 80px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../assets/Folder.png'); /* Update the path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  width: 35px;
+  height: 35px;
+  padding: 10px;
+}
+
+h1 {
+  font-family: 'Spicy Rice', serif;
+  color: #6F96D1;
+  font-weight: lighter;
+  font-size: 100px;
+  line-height: 0.7;
+  text-align: center;
+  margin-top: 10%;
+  position: relative; /* Ensure the heading is properly positioned */
+}
+
+.cloud {
+  width: 200px; /* Adjust the size of the clouds as needed */
+  height: 200px;
+  position: absolute;
+}
+
+.left-top {
+  top: 17%;
+  left: 17%;
+}
+
+.left-bottom {
+  bottom: 10%;
+  left: 10%;
+}
+
+.right-top {
+  top: 10%;
+  right: 10%;
+}
+
+.right-bottom {
+  bottom: 10%;
+  right: 10%;
+}
+
+.cat {
+  width: 320px;
+  height: 330px;
+  position: absolute;
+  right: 14%; /* Adjust the position as needed */
+  top: 70%; /* Adjust the position as needed */
+  transform: translateY(-50%); /* Center the image vertically */
+  z-index: 1; /* Ensure it overlaps with the cloud */
+}
+
+.title
+{
+  color: #6F96D1;
+  font-weight: bold;
+}
+
+.intro-text
+{
+  line-height: 0.3;
+  font-size: 16px;
+}
+
+/* MEDIA QUERIES */
+
+/* Media Query for phones */
+@media only screen and (max-width: 600px) {
+  .logo {
+    font-size: 18px; /* Decrease font size for smaller screens */
+  }
+
+  .nav-links {
+    gap: 10px; /* Decrease gap between navigation links */
+  }
+
+  h1 {
+    font-size: 60px; /* Decrease font size for smaller screens */
+    line-height: 1.2; /* Adjust line height for readability */
+    margin-top: 20px; /* Adjust margin for better spacing */
+  }
+
+  .cloud {
+    display: none; /* Hide clouds for phone sizes */
+  }
+
+  .cat {
+    width: 240px; /* Adjust cat image size for smaller screens */
+    height: 250px;
+    left: 50%; /* Position the left edge at the center of the parent */
+    top: 50%;
+    top: 80%; /* Adjust position for smaller screens */
+    transform: translateY(-50%); /* Center the image vertically */
+    z-index: 1; /* Ensure it overlaps with the cloud */
+  }
+}
