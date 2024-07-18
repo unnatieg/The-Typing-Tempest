@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import './IntensePage.css';
-import { useMediaQuery } from 'react-responsive';
+import './IntenseWriting.css';
 
 const IntensePage = () => {
   const [time, setTime] = useState(5);
-  const isSmallScreen = useMediaQuery({ query: '(max-width: 768px)' });
 
   const increaseTime = () => {
     if (time < 60) {
@@ -23,7 +21,7 @@ const IntensePage = () => {
       <div className="top"></div>
       <nav id="desktop-nav">
         <div className="logo">the typing<br />tempest</div>
-        <ul className={`nav-links ${isSmallScreen ? 'mobile' : ''}`}>
+        <ul className="nav-links">
           <li><a href="">zen</a></li>
           <li><a href="">profile</a></li>
         </ul>
