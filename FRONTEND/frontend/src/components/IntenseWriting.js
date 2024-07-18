@@ -1,45 +1,36 @@
 import React, { useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
 import './IntenseWriting.css';
 
-const IntensePage = () => {
-  const [time, setTime] = useState(5);
+import moonIcon from '../assets/darkmode.svg';
+import expandingIcon from '../assets/expandingicon.svg';
 
-  const increaseTime = () => {
-    if (time < 60) {
-      setTime(time + 5);
-    }
-  };
-
-  const decreaseTime = () => {
-    if (time > 5) {
-      setTime(time - 5);
-    }
-  };
-
-  return (
-    <div>
-      <div className="top"></div>
-      <nav id="desktop-nav">
-        <div className="logo">the typing<br />tempest</div>
-        <ul className="nav-links">
-          <li><a href="">zen</a></li>
-          <li><a href="">profile</a></li>
-        </ul>
-      </nav>
-      <div className="content">
-        <p className="writing-question">How long would you like to write?</p>
-        <div className="stopwatch">
-          <button className="change-time" onClick={decreaseTime} disabled={time === 5}>-</button>
-          <span className="time-display">{time}:00</span>
-          <button className="change-time" onClick={increaseTime} disabled={time === 60}>+</button>
+function IntenseWriting() {
+    const [value, setValue] = useState('');
+  
+    const handleChange = (event) => {
+      setValue(event.target.value);
+    };
+  
+    const isDesktopOrLaptop = useMediaQuery({ query: '(min-width: 1224px)' });
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+  
+    return (
+      <div className="intense-writing-container">
+        <div className="icons-container">
+          <img src={moonIcon} alt="Moon Icon" className="moon-icon" />
+          <img src={expandingIcon} alt="Expanding Icon" className="expanding-icon" />
         </div>
-        <button className="start-writing-button">Start Writing</button>
-        <p style={{ fontFamily: 'Poppins, sans-serif', fontSize: '15px', textAlign: 'center', marginTop: '160px' }}>
-          make sure you don't pause for more than 10 seconds, your texts may disappear!
-        </p>
+        <div className="content-container">
+          <textarea
+            placeholder="Start typing..."
+            value={value}
+            onChange={handleChange}
+            className="seamless-input"
+          />
+        </div>
       </div>
-    </div>
-  );
-};
-
-export default IntensePage;
+    );
+  }
+  
+  export default IntenseWriting;
