@@ -14,7 +14,7 @@ function App() {
   <Route exact path='/' element={<HomePage/>}/>
   <Route exact path='/intense' element={<IntensePage/>}/>
   <Route exact path='/intenseWriting' element={<IntenseWriting/>}/>
-  <Route exact path='/afterFailing' element={<AfterFailing/>}/>
+  <Route exact path='/afterfailing' element={<AfterFailing/>}/>
 
 </Routes>
 

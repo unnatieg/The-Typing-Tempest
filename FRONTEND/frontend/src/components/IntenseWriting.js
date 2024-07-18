@@ -12,6 +12,7 @@ function IntenseWriting() {
   const [value, setValue] = useState('');
   const [timeLeft, setTimeLeft] = useState(state ? state.time * 60 : 0); // time in seconds
   const [wordCount, setWordCount] = useState(0);
+  const initialWordCountRef = useRef(0); // Ref to store initial word count
   const timerRef = useRef(null);
   const deleteTextTimeoutRef = useRef(null);
 
@@ -24,6 +25,11 @@ function IntenseWriting() {
     // Update word count
     const words = text.trim().split(/\s+/);
     setWordCount(words.length);
+
+    // Set initial word count when user starts typing
+    if (!initialWordCountRef.current) {
+      initialWordCountRef.current = words.length;
+    }
 
     // Reset delete text timeout
     clearTimeout(deleteTextTimeoutRef.current);
@@ -44,7 +50,7 @@ function IntenseWriting() {
         setValue('');
         setWordCount(0);
         setTimeLeft(state ? state.time * 60 : 0); // Reset timer
-        navigate('/Users/jazlynjose/Documents/the-typing-tempest/the-typing-tempest-web/FRONTEND/frontend/src/components/AfterFailing.js'); // Navigate to AfterFailing.js
+        navigate('/AfterFailing'); // Navigate to AfterFailing.js
       } else {
         const words = remainingText.trim().split(/\s+/);
         const newWords = words.slice(5);

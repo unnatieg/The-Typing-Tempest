@@ -7,8 +7,9 @@
 /* Global body styles */
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #FFFBF6;
+  background-color: #FFFBF6 !important; /* Add !important to ensure it takes precedence */
   overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
 }
 
