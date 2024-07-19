@@ -6,6 +6,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.first {
+  margin-bottom: 230px;
+}
+
 .logo {
   font-family: 'Spicy Rice', serif;
   font-size: 24px;
@@ -42,7 +46,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('../assets/Folder.png'); /* Update the path */
+  background-image: url('../assets/Folder.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -62,11 +66,11 @@ h1 {
   line-height: 0.7;
   text-align: center;
   margin-top: 10%;
-  position: relative; /* Ensure the heading is properly positioned */
+  position: relative;
 }
 
 .cloud {
-  width: 200px; /* Adjust the size of the clouds as needed */
+  width: 200px;
   height: 200px;
   position: absolute;
 }
@@ -95,53 +99,116 @@ h1 {
   width: 320px;
   height: 330px;
   position: absolute;
-  right: 14%; /* Adjust the position as needed */
-  top: 70%; /* Adjust the position as needed */
-  transform: translateY(-50%); /* Center the image vertically */
-  z-index: 1; /* Ensure it overlaps with the cloud */
+  right: 14%;
+  top: 70%;
+  transform: translateY(-50%);
+  z-index: 1;
 }
 
-.title
-{
+.title {
   color: #6F96D1;
   font-weight: bold;
 }
 
-.intro-text
-{
-  line-height: 0.3;
+.intro-text {
+  line-height: 1.5;
   font-size: 16px;
+  text-align: center;
+  margin: 0 20px;
 }
 
-/* MEDIA QUERIES */
-
-/* Media Query for phones */
 @media only screen and (max-width: 600px) {
   .logo {
-    font-size: 18px; /* Decrease font size for smaller screens */
+    font-size: 18px;
   }
 
   .nav-links {
-    gap: 10px; /* Decrease gap between navigation links */
+    gap: 10px; 
   }
 
   h1 {
-    font-size: 60px; /* Decrease font size for smaller screens */
-    line-height: 1.2; /* Adjust line height for readability */
-    margin-top: 20px; /* Adjust margin for better spacing */
+    font-size: 60px;
+    line-height: 1.2;
+    margin-top: 20px; 
   }
 
   .cloud {
-    display: none; /* Hide clouds for phone sizes */
+    display: none;
   }
 
   .cat {
-    width: 240px; /* Adjust cat image size for smaller screens */
+    width: 240px;
     height: 250px;
-    left: 50%; /* Position the left edge at the center of the parent */
-    top: 50%;
-    top: 80%; /* Adjust position for smaller screens */
-    transform: translateY(-50%); /* Center the image vertically */
-    z-index: 1; /* Ensure it overlaps with the cloud */
+    left: 50%;
+    top: 80%;
+    transform: translateY(-50%);
+    z-index: 1;
   }
+}
+
+.clouds {
+  margin-bottom: 50px;
+}
+
+.new-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+  position: relative;
+  z-index: 0;
+  margin-top: 50px;
+}
+
+.card {
+  display: flex;
+  flex-direction: rows;
+  justify-content: space-between;
+  align-items: center;
+  width: 440px;
+  height: 230px;
+  padding: 20px;
+  border: 3px solid #000;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card h2 {
+  text-align: left;
+}
+
+.card p {
+  text-align: left;
+  font-size: smaller;
+}
+
+.card img.character {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  max-width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+  margin-bottom: 0;
+}
+
+.card-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #6F96D1;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.card-link img {
+  margin-left: 8px;
 }
