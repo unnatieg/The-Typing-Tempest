@@ -5,6 +5,10 @@ import './IntenseWriting.css';
 
 import moonIcon from '../assets/darkmode.svg';
 import expandingIcon from '../assets/expandingicon.svg';
+import lightModeIcon from '../assets/light_mode.svg';
+import lightExpandingIcon from '../assets/lightexpanding.svg';
+
+import { toggleFullscreen, toggleDarkMode } from './utils';
 
 function IntenseWriting() {
   const navigate = useNavigate();
@@ -15,6 +19,7 @@ function IntenseWriting() {
   const initialWordCountRef = useRef(0); // Ref to store initial word count
   const timerRef = useRef(null);
   const deleteTextTimeoutRef = useRef(null);
+  const [isDarkMode, setIsDarkMode] = useState(false); // Dark mode state
 
   const handleChange = (event) => {
     const text = event.target.value;
@@ -94,10 +99,20 @@ function IntenseWriting() {
   };
 
   return (
-    <div className="intense-writing-container">
+    <div className={`intense-writing-container ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="icons-container">
-        <img src={moonIcon} alt="Moon Icon" className="moon-icon" />
-        <img src={expandingIcon} alt="Expanding Icon" className="expanding-icon" />
+        <img
+          src={isDarkMode ? lightModeIcon : moonIcon}
+          alt="Mode Icon"
+          className="mode-icon"
+          onClick={() => toggleDarkMode(isDarkMode, setIsDarkMode)}
+        />
+        <img
+          src={isDarkMode ? lightExpandingIcon : expandingIcon}
+          alt="Expanding Icon"
+          className="expanding-icon"
+          onClick={toggleFullscreen}
+        />
       </div>
       <div className="content-container">
         <textarea
