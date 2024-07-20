@@ -1,6 +1,6 @@
 import React from 'react';
 import './HomePage.css';
-
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 const HomePage = () => {
   return (
     <div>
@@ -9,8 +9,8 @@ const HomePage = () => {
       <nav id="desktop-nav">
         <div className="logo">the typing<br />tempest</div>
         <ul className="nav-links">
-          <li><a href="#">intense</a></li>
-          <li><a href="#">zen</a></li>
+        <li><Link to="/intense">Intense</Link></li>
+        <li><a href="#">zen</a></li>
           <li><a href="#">profile</a></li>
         </ul>
       </nav>
