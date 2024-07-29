@@ -1,11 +1,15 @@
 import React from 'react';
 import './App.css';
-import HomePage from './components/HomePage';
 import IntensePage from './components/IntensePage';
+import HomePage from './components/HomePage';
 import IntenseWriting from './components/IntenseWriting';
 import AfterFailing from './components/AfterFailing';
 import ZenMode from './components/ZenMode';
 import { Route, Routes } from 'react-router-dom';
+<<<<<<< HEAD
+=======
+// import 'bootstrap/dist/css/bootstrap.min.css';
+>>>>>>> 15a021dff9427e725e9fb8ebbcfd9777abae1b88
 
 function App() {
   return (
@@ -23,5 +27,9 @@ function App() {
   );
 }
 
+<<<<<<< HEAD
 export default App;
 
+=======
+export default App;
+>>>>>>> 15a021dff9427e725e9fb8ebbcfd9777abae1b88
