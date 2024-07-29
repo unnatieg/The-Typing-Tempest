@@ -1,0 +1,333 @@
+/* IntensePage.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+/* Global body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #FFFBF6 !important; /* Add !important to ensure it takes precedence */
+  overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
+}
+
+/* Logo styles */
+.logo {
+  font-family: 'Spicy Rice', serif;
+  font-size: 24px;
+  color: #6F96D1;
+  line-height: 1;
+  margin-left: 10px;
+  margin-top: 30px;
+  text-align: center; /* Center logo text */
+}
+
+/* Top bar styles */
+.top {
+  background-color: #6F96D1;
+  height: 40px; /* Fixed height for top bar */
+  width: 100%;
+}
+
+/* Navigation bar styles */
+#desktop-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 60px; /* Fixed height for navigation bar */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-right: 10px;
+  margin-top: 30px;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('../assets/Folder.png'); /* Update the path */
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-decoration: none;
+  color: white;
+  font-size: 13px;
+  width: 50px;
+  height: 50px;
+  padding: 10px;
+  margin-top: 5px; /* Adjusted margin for smaller screens */
+}
+
+/* Main content area styles */
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.writing-question {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  text-align: center;
+  color: #6F96D1;
+  margin-bottom: 20px;
+  margin-top: 100px; /* Adjusted margin for smaller screens */
+}
+
+.stopwatch {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Adjusted margin for smaller screens */
+}
+
+.change-time {
+  font-size: 24px;
+  padding: 10px 20px;
+  margin: 0 10px;
+  background-color: white;
+  color: #6F96D1;
+  border: 1px solid #6F96D1;
+  cursor: pointer;
+}
+
+.change-time:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.time-display {
+  font-family: 'Spicy Rice', serif;
+  font-size: 120px; /* Adjusted font size for smaller screens */
+  color: #6F96D1;
+  text-align: center;
+  margin-bottom: 20px; /* Adjusted margin for smaller screens */
+}
+
+.start-writing-button {
+  margin-top: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  color: white;
+  background-color: #6F96D1;
+  width: 200px;
+  height: 65px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .logo {
+    font-size: 20px;
+    margin-left: 5px;
+    margin-top: 5px;
+    text-align: center; /* Center logo text */
+  }
+
+  .top {
+    height: 30px;
+  }
+
+  #desktop-nav {
+    padding: 0 5px;
+    height: 50px;
+  }
+
+  .nav-links {
+    gap: 10px;
+    margin-right: 5px;
+  }
+
+  .writing-question {
+    font-size: 24px;
+    margin-top: 100px;
+  }
+
+  .time-display {
+    font-size: 80px; /* Adjusted font size for smaller screens */
+    margin-bottom: 10px; /* Adjusted margin for smaller screens */
+  }
+
+  .start-writing-button {
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+    border-radius: 15px;
+  }
+}
+
+.select-ambience {
+  color: #6F96D1;
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
+.ambience-cards {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-bottom: 20px;
+}
+/* Ambience card styles */
+.card {
+  width: 300px;
+  height: 240px;
+  border: 1px solid black;
+  border-radius: 21px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: white;
+  position: relative; /* Ensure the circle and tick are positioned relative to the card */
+}
+
+/* Circle styles */
+.card .selection-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-color: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; /* Ensure the circle is above the image */
+}
+
+/* Tick mark inside the circle */
+.card .selection-circle::after {
+  content: '✓';
+  color: black;
+  font-size: 24px;
+  display: none; /* Hide tick by default */
+}
+
+/* Show tick mark when card is selected */
+.card.selected .selection-circle::after {
+  display: block;
+}
+
+/* Ensure selected card has the correct border color */
+.card.selected {
+  border: 2px solid #6F96D1; /* Highlight selected card */
+}
+
+.card img {
+  width: 100%;
+  height: calc(100% - 50px); /* Adjust height to account for text space */
+  object-fit: cover;
+  position: absolute; /* Position the image absolutely within the card */
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Ensuring text is positioned correctly */
+.card p {
+  font-size: 16px;
+  color: black;
+  margin-top: 200px; /* Remove default margin */
+  padding: 20px; /* Add padding to create space around text */
+  position: relative; /* Ensure text is positioned below the image */
+  z-index: 1; /* Ensure text appears above the image */
+}
+
+
+
+.select-soundtrack {
+  color: #6F96D1;
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  margin-top: 50px;
+}
+
+.soundtrack-cards {
+  display: flex;
+  justify-content: center;
+  gap: 45px;
+  margin-bottom: 20px;
+  flex-wrap: wrap; /* Ensure the cards wrap if the screen is too small */
+}
+/* Soundtrack card styles */
+.cardsoundtrack {
+  width: 320px;
+  height: 70px;
+  border: 1px solid black;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: white;
+  position: relative; /* Ensure circle and tick are positioned relative to the card */
+}
+
+/* Circle inside the soundtrack card */
+.cardsoundtrack .selection-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  background-color: white;
+  position: absolute;
+  left: 10px; /* Position circle at the left-middle corner */
+  top: 50%;
+  transform: translateY(-50%); /* Center the circle vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2; /* Ensure the circle is above the card content */
+}
+
+/* Tick mark inside the circle */
+.cardsoundtrack .selection-circle::after {
+  content: '✓'; /* You can replace this with any tick mark you prefer */
+  color: black;
+  font-size: 24px;
+  display: none; /* Hide tick by default */
+}
+
+/* Show tick mark when card is selected */
+.cardsoundtrack.selected .selection-circle::after {
+  display: block;
+}
+
+.cardsoundtrack p {
+  font-size: 18px;
+  color: black;
+  margin: 0;
+  padding: 10px 0;
+  margin-left: 80px; /* Adjust margin to ensure text does not overlap with the circle */
+}
+
+/* Ensure only one card is selected */
+.cardsoundtrack.selected {
+  border: 2px solid #6F96D1; /* Highlight selected card */
+}
